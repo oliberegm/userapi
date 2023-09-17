@@ -63,9 +63,9 @@ class UserUseCaseIntegrationTest {
             tokenService.generateToken("pruebas@test.com"),
             Boolean.TRUE,
             List.of(PhoneMapper.toEntity(PhoneRequestDTO.builder()
-                    .contrycode("57")
-                    .citycode("1")
-                    .number("1234567")
+                .contrycode("57")
+                .citycode("1")
+                .number("1234567")
                 .build()))
         );
     }
@@ -78,14 +78,14 @@ class UserUseCaseIntegrationTest {
             .name("pruebas tests")
             .password("Pruebas1234")
             .phones(List.of(PhoneRequestDTO.builder()
-                    .contrycode("57")
-                    .citycode("1")
-                    .number("1234567")
+                .contrycode("57")
+                .citycode("1")
+                .number("1234567")
                 .build()))
             .build();
         mockMvc.perform(post("/users/register")
-            .contentType(MediaType.APPLICATION_JSON)
-            .content(objectMapper.writeValueAsString(userRequestDTO)))
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(userRequestDTO)))
             .andExpect(status().isCreated());
         assertThat(userRepository.findByEmail(mail)).isNotEmpty();
     }
@@ -95,7 +95,7 @@ class UserUseCaseIntegrationTest {
         User user = userRepository.save(dataUserTest());
 
         mockMvc.perform(get("/users")
-            .header("Authorization", "Bearer " + user.getToken()))
+                .header("Authorization", "Bearer " + user.getToken()))
             .andExpect(status().isOk());
     }
 

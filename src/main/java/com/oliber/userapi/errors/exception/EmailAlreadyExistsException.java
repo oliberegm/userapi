@@ -1,7 +1,5 @@
 package com.oliber.userapi.errors.exception;
 
-import java.io.Serial;
-
 public class EmailAlreadyExistsException extends RuntimeException {
 
     public EmailAlreadyExistsException(String message, Throwable cause) {

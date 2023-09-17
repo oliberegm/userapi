@@ -1,6 +1,7 @@
 package com.oliber.userapi.service.validator.impl;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.oliber.userapi.service.configuration.IMaintenanceService;
 import jakarta.validation.ConstraintValidatorContext;

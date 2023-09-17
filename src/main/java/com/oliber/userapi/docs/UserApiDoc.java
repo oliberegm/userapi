@@ -20,7 +20,7 @@ public interface UserApiDoc {
     @ApiResponses(value = {
         @ApiResponse(responseCode = "200", description = "Usuarios encontrado",
             content = @Content(mediaType = "application/json",
-                array = @ArraySchema( schema = @Schema(implementation = UserResponseDTO.class))))
+                array = @ArraySchema(schema = @Schema(implementation = UserResponseDTO.class))))
     })
     ResponseEntity<List<UserResponseDTO>> getAllUsers();
 
