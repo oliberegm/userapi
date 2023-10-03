@@ -48,7 +48,6 @@ Creacion de usuarios
 curl --location --request POST 'http://localhost:8081/users/register' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
---header 'Authorization: Bearer {{bearerToken}}' \
 --data-raw '{
 "email": "ut",
 "name": "ex in ullamco",
